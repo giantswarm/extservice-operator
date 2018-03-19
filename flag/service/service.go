@@ -1,11 +1,11 @@
 package service
 
 import (
-	"github.com/giantswarm/azure-operator/flag/service/azure"
-	"github.com/giantswarm/azure-operator/flag/service/kubernetes"
+	"github.com/giantswarm/extservice-operator/flag/service/kubernetes"
+	"github.com/giantswarm/extservice-operator/flag/service/extservice"
 )
 
 type Service struct {
-	Azure      azure.Azure
+	ExtService extservice.ExtService
 	Kubernetes kubernetes.Kubernetes
 }

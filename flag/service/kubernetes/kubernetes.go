@@ -1,7 +1,7 @@
 package kubernetes
 
 import (
-	"github.com/giantswarm/azure-operator/flag/service/kubernetes/tls"
+	"github.com/giantswarm/extservice-operator/flag/service/kubernetes/tls"
 )
 
 type Kubernetes struct {
