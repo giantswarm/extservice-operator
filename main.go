@@ -20,7 +20,7 @@ const (
 )
 
 var (
-	description = "The extservice-operator manages connection from the guest cluster pods to the guset cluster services."
+	description = "The extservice-operator manages connections from the guest cluster pods to the guest cluster services."
 	f           = flag.New()
 	gitCommit   = notAvailable
 	name        = "extservice-operator"

@@ -2,5 +2,5 @@
 
 # extservice-operator
 
-The extservice-operator manages connection from the guest cluster pods to the
+The extservice-operator manages connections from the guest cluster pods to the
 guest cluster services.

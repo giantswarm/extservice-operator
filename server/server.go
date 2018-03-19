@@ -28,17 +28,17 @@ func New(config Config) (microserver.Server, error) {
 	var err error
 
 	if config.Logger == nil {
-		return nil, microerror.Maskf(invalidConfigError, "config.Logger must not be empty")
+		return nil, microerror.Maskf(invalidConfigError, "%T.Logger must not be empty", config)
 	}
 	if config.Service == nil {
-		return nil, microerror.Maskf(invalidConfigError, "config.Service must not be empty")
+		return nil, microerror.Maskf(invalidConfigError, "%T.Service must not be empty", config)
 	}
 	if config.Viper == nil {
-		return nil, microerror.Maskf(invalidConfigError, "config.Viper must not be empty")
+		return nil, microerror.Maskf(invalidConfigError, "%T.Viper must not be empty", config)
 	}
 
 	if config.ProjectName == "" {
-		return nil, microerror.Maskf(invalidConfigError, "config.ProjectName must not be empty")
+		return nil, microerror.Maskf(invalidConfigError, "%T.ProjectName must not be empty", config)
 	}
 
 	var endpointCollection *endpoint.Endpoint
