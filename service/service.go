@@ -5,6 +5,7 @@ import (
 	"sync"
 
 	"github.com/giantswarm/microendpoint/service/version"
+	"github.com/giantswarm/microerror"
 	"github.com/giantswarm/micrologger"
 	"github.com/spf13/viper"
 
@@ -29,7 +30,27 @@ type Service struct {
 }
 
 func New(config Config) (*Service, error) {
+	var err error
+
+	var versionService *version.Service
+	{
+		versionConfig := version.Config{
+			Description:    config.Description,
+			GitCommit:      config.GitCommit,
+			Name:           config.ProjectName,
+			Source:         config.Source,
+			VersionBundles: newVersionBundles(),
+		}
+
+		versionService, err = version.New(versionConfig)
+		if err != nil {
+			return nil, microerror.Mask(err)
+		}
+	}
+
 	s := &Service{
+		Version: versionService,
+
 		bootOnce: new(sync.Once),
 	}
 
