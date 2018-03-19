@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/giantswarm/extservice-operator/flag/service/kubernetes"
 	"github.com/giantswarm/extservice-operator/flag/service/extservice"
+	"github.com/giantswarm/extservice-operator/flag/service/kubernetes"
 )
 
 type Service struct {
