@@ -41,6 +41,10 @@
   branch = "master"
   name = "github.com/giantswarm/micrologger"
 
+[[constraint]]
+  branch = "master"
+  name = "github.com/giantswarm/versionbundle"
+
 [prune]
   go-tests = true
   unused-packages = true
