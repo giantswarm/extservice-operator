@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"sync"
 
 	"github.com/giantswarm/microendpoint/service/version"
 	"github.com/giantswarm/micrologger"
@@ -23,11 +24,19 @@ type Config struct {
 
 type Service struct {
 	Version *version.Service
+
+	bootOnce *sync.Once
 }
 
 func New(config Config) (*Service, error) {
-	return &Service{}, nil
+	s := &Service{
+		bootOnce: new(sync.Once),
+	}
+
+	return s, nil
 }
 
 func (s *Service) Boot(ctx context.Context) {
+	s.bootOnce.Do(func() {
+	})
 }
