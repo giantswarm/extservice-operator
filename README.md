@@ -1,5 +1,6 @@
-[![CircleCI](https://circleci.com/gh/giantswarm/extservice-operator.svg?style=shield)](https://circleci.com/gh/giantswarm/extservice-operator)
+[![CircleCI](https://circleci.com/gh/giantswarm/extservice-operator.svg?style=shield&circle-token=373dcae33aecb47a0a53c51105e9381dff5b0b88)](https://circleci.com/gh/giantswarm/extservice-operator)
 
 # extservice-operator
 
-Operator for creating services connecting host cluster services to the guest cluster pods
+The extservice-operator manages connection from the guest cluster pods to the
+guest cluster services.
