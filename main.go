@@ -67,13 +67,11 @@ func mainError() (err error) {
 		var newServer microserver.Server
 		{
 			c := server.Config{
+				Logger:  logger,
 				Service: newService,
+				Viper:   v,
 
-				MicroServerConfig: microserver.Config{
-					Logger:      logger,
-					ServiceName: name,
-					Viper:       v,
-				},
+				ProjectName: name,
 			}
 
 			newServer, err = server.New(c)
