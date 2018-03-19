@@ -44,7 +44,7 @@ func mainError() (err error) {
 		// New custom service implements the business logic.
 		var newService *service.Service
 		{
-			serviceConfig := service.Config{
+			c := service.Config{
 				Flag:   f,
 				Logger: logger,
 				Viper:  v,
@@ -55,9 +55,9 @@ func mainError() (err error) {
 				Source:      source,
 			}
 
-			newService, err = service.New(serviceConfig)
+			newService, err = service.New(c)
 			if err != nil {
-				panic(fmt.Sprintf("%#v\n", microerror.Maskf(err, "service.New")))
+				panic(fmt.Sprintf("%#v", microerror.Mask(err)))
 			}
 
 			go newService.Boot(ctx)
@@ -78,7 +78,7 @@ func mainError() (err error) {
 
 			newServer, err = server.New(c)
 			if err != nil {
-				panic(fmt.Sprintf("%#v\n", microerror.Maskf(err, "server.New")))
+				panic(fmt.Sprintf("%#v", microerror.Mask(err)))
 			}
 		}
 
