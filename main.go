@@ -98,7 +98,7 @@ func mainError() (err error) {
 
 		newCommand, err = command.New(c)
 		if err != nil {
-			return microerror.Maskf(err, "command.New")
+			return microerror.Maskf(err)
 		}
 	}
 
